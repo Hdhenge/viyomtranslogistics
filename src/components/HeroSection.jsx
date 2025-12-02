@@ -86,7 +86,7 @@ const HeroSection = () => {
               {/* Image Container */}
               <div className=" overflow-hidden p-1">
                 <img 
-                  src="public/img/hero-area-img.png" 
+                  src="/img/hero-area-img.png" 
                   alt="Logistics - Air, Sea and Land Transport" 
                   className="w-full h-auto  object-cover"
                 />
