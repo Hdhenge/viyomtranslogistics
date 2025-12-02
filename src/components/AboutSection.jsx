@@ -110,7 +110,7 @@ const AboutSection = () => {
                 {/* Placeholder for your actual image */}
                 <div className="aspect-[4/3] bg-gray-300">
                   <img 
-                    src="/api/placeholder/700/525" 
+                    src="public/img/about/about-1.png" 
                     alt="Logistics worker with cargo plane" 
                     className="w-full h-full object-cover"
                   />

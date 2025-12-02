@@ -102,7 +102,7 @@ const Header = () => {
             {/* Logo */}
             <Link to="/" className="flex items-center">
               <img
-                src="./src/assets/img/logo-YKblOgp74qujKW5L.avif"
+                src="public/img/Viyoim-logo.png"
                 alt="Viyom Logo"
                 className={`transition-all duration-300 ${
                   isScrolled ? 'h-10 sm:h-12 md:h-14' : 'h-12 sm:h-16 md:h-20'
