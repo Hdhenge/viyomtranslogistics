@@ -88,7 +88,7 @@ const HeroSection = () => {
                 <img 
                   src="src/assets/img/hero-area-img.png" 
                   alt="Logistics - Air, Sea and Land Transport" 
-                  className="w-full h-auto rounded-[1.8rem] object-cover"
+                  className="w-full h-auto  object-cover"
                 />
               </div>
  

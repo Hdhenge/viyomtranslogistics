@@ -145,17 +145,6 @@ const Header = () => {
           </div>
         </div>
 
-        {/* Mobile Overlay */}
-        <div
-          className={`lg:hidden fixed inset-0 bg-black transition-all duration-300 ${
-            isMobileMenuOpen ? 'bg-opacity-50 visible' : 'bg-opacity-0 invisible'
-          }`}
-          style={{ 
-            top: isScrolled ? '60px' : (window.innerWidth >= 768 ? '128px' : '60px'),
-          }}
-          onClick={toggleMobileMenu}
-        />
-
         {/* Mobile Menu Drawer */}
         <div
           className={`lg:hidden fixed right-0 w-full sm:w-80 md:w-96 bg-white shadow-2xl z-[998] transform transition-all duration-500 ease-in-out overflow-y-auto ${
