@@ -1,74 +1,96 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
 
-const ServicesSection = () => {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1
-  });
-
+const ServicesSectionSimple = () => {
   const services = [
     {
-      title: 'Air Freight',
-      description: 'Fast and reliable air cargo services worldwide',
-      icon: '✈️'
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+        </svg>
+      ),
+      title: "Warehouse & Storage Solutions",
+      description: "Secure facilities with real-time inventory tracking"
     },
     {
-      title: 'Sea Freight',
-      description: 'Cost-effective ocean shipping solutions',
-      icon: '🚢'
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+        </svg>
+      ),
+      title: "Freight Transportation",
+      description: "Ground, air, and sea shipping worldwide"
     },
     {
-      title: 'Road Transport',
-      description: 'Efficient ground transportation services',
-      icon: '🚚'
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+        </svg>
+      ),
+      title: "Supply Chain Optimization",
+      description: "Complete supply chain planning and management"
     },
     {
-      title: 'Warehousing',
-      description: 'Secure storage and inventory management',
-      icon: '🏢'
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+        </svg>
+      ),
+      title: "Express & Same-Day Delivery",
+      description: "Fast delivery for time-sensitive shipments"
     }
   ];
 
   return (
-    <section id="services" className="py-20 bg-white">
-      <div className="container mx-auto px-4">
-        <motion.div 
-          ref={ref}
-          initial={{ opacity: 0, y: 50 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl font-bold text-gray-800 mb-4">Our Services</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Comprehensive logistics solutions for all your business needs
-          </p>
-        </motion.div>
+    <section className="bg-gray-50 py-16 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Left Side - Text Content */}
+          <div>
+            <p className="text-sm text-lime-500 uppercase tracking-wide font-semibold mb-3">
+              WHAT WE DO
+            </p>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              Professional Logistics Services
+            </h2>
+            <p className="text-gray-600 mb-8 leading-relaxed">
+              From warehousing to worldwide shipping, we provide comprehensive logistics solutions that keep your business moving forward with efficiency and reliability.
+            </p>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {services.map((service, index) => (
-            <motion.div 
-              key={index}
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={inView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-xl hover:shadow-xl transition-all hover:-translate-y-2"
-            >
-              <div className="text-5xl mb-4">{service.icon}</div>
-              <h3 className="text-2xl font-bold text-gray-800 mb-3">
-                {service.title}
-              </h3>
-              <p className="text-gray-600">
-                {service.description}
-              </p>
-            </motion.div>
-          ))}
+            {/* Services List */}
+            <div className="space-y-4 mb-8">
+              {services.map((service, index) => (
+                <div key={index} className="flex items-start bg-white p-4 rounded-lg shadow-sm">
+                  <div className="flex-shrink-0">
+                    <div className="w-8 h-8 bg-lime-500 rounded-full flex items-center justify-center text-white">
+                      {service.icon}
+                    </div>
+                  </div>
+                  <div className="ml-4">
+                    <h4 className="font-semibold text-gray-900 mb-1">{service.title}</h4>
+                    <p className="text-gray-600 text-sm">{service.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* CTA Button */}
+            <button className="bg-lime-500 hover:bg-lime-600 text-white font-semibold px-8 py-3 rounded-lg transition-colors duration-200">
+              Explore Our Services
+            </button>
+          </div>
+
+          {/* Right Side - Image */}
+          <div className="relative lg:order-last order-first">
+            <img
+              src="https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?w=800"
+              alt="Logistics warehouse operations"
+              className="w-full h-[550px] object-cover rounded-2xl shadow-2xl"
+            />
+          </div>
         </div>
       </div>
     </section>
   );
 };
 
-export default ServicesSection;
+export default ServicesSectionSimple;

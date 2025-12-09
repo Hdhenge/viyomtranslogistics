@@ -43,45 +43,45 @@ const Header = () => {
   const navItems = [
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
-    { name: 'Service', path: '/service' },
+    { name: 'Services', path: '/services' },
     { name: 'Contact Us', path: '/contact' },
   ];
 
   return (
     <>
       {/* Topbar */}
-      <div className={`top-0 left-0 right-0 bg-[#13253d] text-white py-3 z-[998] hidden md:block transition-all duration-300 ${
-        isScrolled ? 'opacity-0 -translate-y-full' : 'opacity-100 translate-y-0'
+      <div className={`top-0 left-0 right-0 w-full bg-[#13253d] text-white py-3 z-[998] hidden md:block transition-all duration-300 ${
+        isScrolled ? 'opacity-0 -translate-y-full pointer-events-none' : 'opacity-100 translate-y-0'
       }`}>
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap justify-between items-center gap-4">
             <div className="flex flex-wrap gap-3 md:gap-4 text-xs md:text-sm">
-              <a href="mailto:info@example.com" className="flex items-center gap-1 md:gap-2 hover:text-lime-400 transition">
-                <MdEmail className="text-base md:text-lg" />
+              <a href="mailto:info@example.com" className="flex items-center gap-1 md:gap-2 hover:text-lime-400 transition-colors duration-300">
+                <MdEmail className="text-base md:text-lg flex-shrink-0" />
                 <span className="hidden lg:inline">info@example.com</span>
               </a>
-              <a href="#" className="flex items-center gap-1 md:gap-2 hover:text-lime-400 transition">
-                <MdLocationOn className="text-base md:text-lg" />
+              <a href="#" className="flex items-center gap-1 md:gap-2 hover:text-lime-400 transition-colors duration-300">
+                <MdLocationOn className="text-base md:text-lg flex-shrink-0" />
                 <span className="hidden xl:inline">6391 Elgin St. Celina, 10299</span>
                 <span className="xl:hidden">Location</span>
               </a>
-              <a href="tel:(629)555-0129" className="flex items-center gap-1 md:gap-2 hover:text-lime-400 transition">
-                <MdPhone className="text-base md:text-lg" />
+              <a href="tel:(629)555-0129" className="flex items-center gap-1 md:gap-2 hover:text-lime-400 transition-colors duration-300">
+                <MdPhone className="text-base md:text-lg flex-shrink-0" />
                 <span>(629) 555-0129</span>
               </a>
             </div>
 
             <div className="flex gap-3 md:gap-4">
-              <a href="#" className="hover:text-lime-400 transition" aria-label="Facebook">
+              <a href="#" className="hover:text-lime-400 transition-colors duration-300" aria-label="Facebook">
                 <FaFacebook size={16} className="md:w-[18px] md:h-[18px]" />
               </a>
-              <a href="#" className="hover:text-lime-400 transition" aria-label="Instagram">
+              <a href="#" className="hover:text-lime-400 transition-colors duration-300" aria-label="Instagram">
                 <FaInstagram size={16} className="md:w-[18px] md:h-[18px]" />
               </a>
-              <a href="#" className="hover:text-lime-400 transition" aria-label="Pinterest">
+              <a href="#" className="hover:text-lime-400 transition-colors duration-300" aria-label="Pinterest">
                 <FaPinterest size={16} className="md:w-[18px] md:h-[18px]" />
               </a>
-              <a href="#" className="hover:text-lime-400 transition" aria-label="LinkedIn">
+              <a href="#" className="hover:text-lime-400 transition-colors duration-300" aria-label="LinkedIn">
                 <FaLinkedin size={16} className="md:w-[18px] md:h-[18px]" />
               </a>
             </div>
@@ -91,16 +91,16 @@ const Header = () => {
 
       {/* Navbar */}
       <nav
-       className={`fixed md:sticky top-0 left-0 right-0 bg-white z-[1000] transition-all duration-300 ${
-    isScrolled ? 'shadow-xl shadow-lime-400/30' : 'md:mt-[0px] shadow-md shadow-lime-400/20'
-  }`}
+        className={`fixed md:sticky top-0 left-0 right-0 w-full bg-white z-[1000] transition-all duration-300 ${
+          isScrolled ? 'shadow-xl shadow-lime-400/30' : 'md:mt-[0px] shadow-md shadow-lime-400/20'
+        }`}
       >
         <div className="container mx-auto px-4">
           <div className={`flex justify-between items-center transition-all duration-300 ${
             isScrolled ? 'py-2 md:py-3' : 'py-3 md:py-4'
           }`}>
             {/* Logo */}
-            <Link to="/" className="flex items-center">
+            <Link to="/" className="flex items-center flex-shrink-0">
               <img
                 src="/img/Viyoim-logo.png"
                 alt="Viyom Logo"
@@ -121,7 +121,7 @@ const Header = () => {
                 <li key={index}>
                   <Link
                     to={item.path}
-                    className="group text-xl text-gray-700 hover:text-[#148281] font-bold transition-colors duration-300"
+                    className="group text-xl text-gray-700 hover:text-[#148281] font-bold transition-colors duration-300 inline-block"
                   >
                     {item.name}
                     <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-[#148281]"></span>
@@ -133,8 +133,9 @@ const Header = () => {
             {/* Hamburger Button */}
             <button
               onClick={toggleMobileMenu}
-              className="lg:hidden bg-[#0a4a5c] text-white rounded-full p-2 md:p-3 hover:bg-[#083d4d] transition-all duration-300 relative z-[1001] hover:scale-110"
+              className="lg:hidden bg-[#0a4a5c] text-white rounded-full p-2 md:p-3 hover:bg-[#083d4d] transition-all duration-300 relative z-[1001] hover:scale-110 flex-shrink-0"
               aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={isMobileMenuOpen}
             >
               {isMobileMenuOpen ? (
                 <MdClose className="w-5 h-5 md:w-6 md:h-6" />
@@ -148,7 +149,7 @@ const Header = () => {
         {/* Mobile Menu Drawer */}
         <div
           className={`lg:hidden fixed right-0 w-full sm:w-80 md:w-96 bg-white shadow-2xl z-[998] transform transition-all duration-500 ease-in-out overflow-y-auto ${
-            isMobileMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'
+            isMobileMenuOpen ? 'translate-x-0 opacity-100 visible' : 'translate-x-full opacity-0 invisible'
           }`}
           style={{
             top: isScrolled 
@@ -157,7 +158,7 @@ const Header = () => {
             height: isScrolled 
               ? (window.innerWidth >= 768 ? 'calc(100vh - 80px)' : 'calc(100vh - 60px)')
               : (window.innerWidth >= 768 ? 'calc(100vh - 128px)' : 'calc(100vh - 60px)'),
-            transition: 'top 0.3s ease-in-out, height 0.3s ease-in-out, transform 0.5s ease-in-out, opacity 0.5s ease-in-out'
+            transition: 'top 0.3s ease-in-out, height 0.3s ease-in-out, transform 0.5s ease-in-out, opacity 0.5s ease-in-out, visibility 0.5s ease-in-out'
           }}
         >
           {/* Mobile Social Icons */}
@@ -167,16 +168,16 @@ const Header = () => {
           style={{ transitionDelay: isMobileMenuOpen ? '100ms' : '0ms' }}
           >
             <div className="flex justify-center gap-6">
-              <a href="#" className="text-[#0a4a5c] hover:text-[#083d4d] transition hover:scale-125 transform" aria-label="Facebook">
+              <a href="#" className="text-[#0a4a5c] hover:text-[#083d4d] transition-transform duration-300 hover:scale-125" aria-label="Facebook">
                 <FaFacebook size={20} />
               </a>
-              <a href="#" className="text-[#0a4a5c] hover:text-[#083d4d] transition hover:scale-125 transform" aria-label="Instagram">
+              <a href="#" className="text-[#0a4a5c] hover:text-[#083d4d] transition-transform duration-300 hover:scale-125" aria-label="Instagram">
                 <FaInstagram size={20} />
               </a>
-              <a href="#" className="text-[#0a4a5c] hover:text-[#083d4d] transition hover:scale-125 transform" aria-label="Pinterest">
+              <a href="#" className="text-[#0a4a5c] hover:text-[#083d4d] transition-transform duration-300 hover:scale-125" aria-label="Pinterest">
                 <FaPinterest size={20} />
               </a>
-              <a href="#" className="text-[#0a4a5c] hover:text-[#083d4d] transition hover:scale-125 transform" aria-label="LinkedIn">
+              <a href="#" className="text-[#0a4a5c] hover:text-[#083d4d] transition-transform duration-300 hover:scale-125" aria-label="LinkedIn">
                 <FaLinkedin size={20} />
               </a>
             </div>
@@ -198,7 +199,7 @@ const Header = () => {
               >
                 <Link
                   to={item.path}
-                  className="flex items-center justify-between px-6 py-4 text-gray-700 hover:bg-gray-50 hover:text-[#0a4a5c] font-medium transition-colors hover:pl-8"
+                  className="flex items-center justify-between px-6 py-4 text-gray-700 hover:bg-gray-50 hover:text-[#0a4a5c] font-medium transition-all duration-300 hover:pl-8"
                   onClick={toggleMobileMenu}
                 >
                   <span className="text-base md:text-lg">{item.name}</span>
@@ -214,16 +215,16 @@ const Header = () => {
             }`}
             style={{ transitionDelay: isMobileMenuOpen ? '450ms' : '0ms' }}
           >
-            <a href="mailto:info@example.com" className="flex items-center gap-3 text-gray-700 hover:text-[#0a4a5c] transition hover:translate-x-2">
-              <MdEmail className="text-xl" />
+            <a href="mailto:info@example.com" className="flex items-center gap-3 text-gray-700 hover:text-[#0a4a5c] transition-all duration-300 hover:translate-x-2">
+              <MdEmail className="text-xl flex-shrink-0" />
               <span className="text-sm">info@example.com</span>
             </a>
-            <a href="#" className="flex items-center gap-3 text-gray-700 hover:text-[#0a4a5c] transition hover:translate-x-2">
-              <MdLocationOn className="text-xl" />
+            <a href="#" className="flex items-center gap-3 text-gray-700 hover:text-[#0a4a5c] transition-all duration-300 hover:translate-x-2">
+              <MdLocationOn className="text-xl flex-shrink-0" />
               <span className="text-sm">6391 Elgin St. Celina, 10299</span>
             </a>
-            <a href="tel:(629)555-0129" className="flex items-center gap-3 text-gray-700 hover:text-[#0a4a5c] transition hover:translate-x-2">
-              <MdPhone className="text-xl" />
+            <a href="tel:(629)555-0129" className="flex items-center gap-3 text-gray-700 hover:text-[#0a4a5c] transition-all duration-300 hover:translate-x-2">
+              <MdPhone className="text-xl flex-shrink-0" />
               <span className="text-sm">(629) 555-0129</span>
             </a>
           </div>
