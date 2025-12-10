@@ -34,7 +34,7 @@ const AboutUs = () => {
         </svg>
       ),
       title: "Customer Focus",
-      description: "Your success is our priority with personalized service and 24/7 support."
+      description: "Your success is our priority with personalized service and dedicated support."
     },
     {
       icon: (
@@ -49,24 +49,19 @@ const AboutUs = () => {
 
   const team = [
     {
-      name: "John Anderson",
-      position: "Chief Executive Officer",
+      name: "Sudhir Nath",
+      position: "Director",
       image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400"
     },
     {
-      name: "Sarah Mitchell",
-      position: "Operations Director",
+      name: "Urmila Manoj Shingade",
+      position: "Director",
       image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400"
     },
     {
-      name: "Michael Chen",
-      position: "Logistics Manager",
+      name: "Suresh Kumar S",
+      position: "Regional Head (Visakhapatnam)",
       image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400"
-    },
-    {
-      name: "Emily Rodriguez",
-      position: "Customer Relations Head",
-      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400"
     }
   ];
 
@@ -107,13 +102,13 @@ const AboutUs = () => {
                 Building the Future of Logistics
               </h2>
               <p className="text-gray-600 mb-4 leading-relaxed">
-                Founded in 2010, we started with a simple mission: to revolutionize the logistics industry through innovation, technology, and exceptional customer service. Over the past 15 years, we've grown from a small local operation to a global logistics powerhouse.
+                Viyom Translogistics Private Limited was established in 2025 with a clear and ambitious mission: to revolutionize the logistics industry through digital innovation and unwavering commitment to service. Headquartered in the industrial heart of Odisha, we are a rapidly emerging force in the Indian supply chain sector.
               </p>
               <p className="text-gray-600 mb-6 leading-relaxed">
-                Today, we serve over 500 clients across 25 countries, handling everything from warehousing and inventory management to international freight and last-mile delivery. Our commitment to excellence has made us a trusted partner for businesses of all sizes.
+                Though a young company, we are built on a foundation of deep industry expertise. Our leadership team brings decades of combined experience in freight forwarding, warehousing, and supply chain management. What started as a vision to simplify complex trade routes has quickly evolved into a trusted partnership for businesses across India.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                We continue to invest in cutting-edge technology, expand our global network, and train our team to deliver world-class logistics solutions that drive our clients' success.
+                Today, we are aggressively expanding our footprint, serving clients in retail, industrial, and personal sectors. From pan-India trucking to international freight forwarding, we handle every shipment with precision. We continue to invest in cutting-edge tracking technology and expand our network to deliver world-class logistics solutions that drive our clients' success.
               </p>
             </div>
           </div>
@@ -149,7 +144,7 @@ const AboutUs = () => {
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Mission</h3>
               <p className="text-gray-600 leading-relaxed">
-                To provide innovative, reliable, and efficient logistics solutions that empower businesses to grow and succeed in the global marketplace. We strive to exceed expectations through continuous improvement and unwavering commitment to quality.
+                To provide innovative, reliable, and efficient logistics solutions that empower businesses to grow and succeed in the global marketplace. We strive to exceed expectations through continuous improvement and an unwavering commitment to quality.
               </p>
             </div>
 
@@ -163,7 +158,7 @@ const AboutUs = () => {
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Vision</h3>
               <p className="text-gray-600 leading-relaxed">
-                To be the world's most trusted logistics partner, recognized for innovation, sustainability, and exceptional service. We envision a future where seamless global commerce is accessible to all, powered by smart technology and human expertise.
+                To be India's most trusted logistics partner, recognized for innovation, sustainability, and exceptional service. We envision a future where seamless global commerce is accessible to all, powered by smart technology and human expertise.
               </p>
             </div>
           </div>
@@ -215,9 +210,9 @@ const AboutUs = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="flex flex-wrap justify-center gap-8">
             {team.map((member, index) => (
-              <div key={index} className="group">
+              <div key={index} className="group w-full sm:w-[calc(50%-1rem)] lg:w-[calc(25%-1.5rem)]">
                 <div className="relative overflow-hidden rounded-xl mb-4">
                   <img
                     src={member.image}
@@ -233,6 +228,7 @@ const AboutUs = () => {
               </div>
             ))}
           </div>
+
         </div>
       </section>
 

@@ -38,9 +38,9 @@ const HeroSection = () => {
               transition={{ delay: 0.3 }}
               className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight"
             >
-              Fast Furious{' '}
-              <span className="text-[#c8d82e]">Transport All of</span>{' '}
-              The Logistics
+              Redefining  {' '}
+              <span className="text-[#c8d82e]">Logistics for the</span>{' '}
+              Modern World
             </motion.h1>
 
             {/* Description */}
@@ -50,7 +50,7 @@ const HeroSection = () => {
               transition={{ delay: 0.4 }}
               className="text-gray-200 text-base md:text-lg max-w-xl leading-relaxed"
             >
-              We have been operating for over a decade, providing top-notch services to our clients and building a strong track record
+              From the industrial heart of Odisha to destinations across the globe, Viyom Translogistics delivers reliability, speed, and innovation. We handle the complexities of your supply chain so you can focus on growing your business.
             </motion.p>
 
             {/* CTA Buttons */}
@@ -60,9 +60,8 @@ const HeroSection = () => {
               transition={{ delay: 0.5 }}
               className="flex flex-col sm:flex-row items-start sm:items-center gap-4 pt-4"
             >
-              <button className="group bg-[#c8d82e] text-[#0a4a5c] px-8 py-4 rounded-lg font-semibold hover:bg-[#d4e345] transition-all duration-300 flex items-center gap-2 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
-                All Project
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              {/* <button className="group bg-[#c8d82e] text-[#0a4a5c] px-8 py-4 rounded-lg font-semibold hover:bg-[#d4e345] transition-all duration-300 flex items-center gap-2 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                Cantact Us
               </button>
               
               <button className="group flex items-center gap-3 text-white hover:text-[#c8d82e] transition-colors duration-300">
@@ -70,7 +69,7 @@ const HeroSection = () => {
                   <Play className="w-6 h-6 ml-1" fill="currentColor" />
                 </div>
                 <span className="font-semibold text-base">See How It Works</span>
-              </button>
+              </button> */}
             </motion.div>
           </motion.div>
 

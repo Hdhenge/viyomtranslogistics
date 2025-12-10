@@ -14,11 +14,12 @@ const AboutSection = () => {
     threshold: 0.2
   });
 
+  // Updated features specific to Viyom Translogistics
   const features = [
-    "Your satisfaction is our priority",
-    "Enhancing your travel experience",
-    "Safe, comfortable, and on time",
-    "Discover the joy free transportation"
+    "Customer satisfaction is our top priority",
+    "Real-time tracking for every shipment",
+    "Safe, secure, and on-time delivery",
+    "Cost-effective supply chain solutions"
   ];
 
   // Animation variants
@@ -80,7 +81,7 @@ const AboutSection = () => {
       <div className="container mx-auto px-4 lg:px-8">
         
         {/* Main Grid Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           
           {/* Left Side - Image with Badge */}
           <motion.div
@@ -97,7 +98,7 @@ const AboutSection = () => {
               transition={{ duration: 0.3 }}
             >
               {/* Image with rounded corners and lime border accent */}
-              <div className="relative rounded-3xl overflow-hidden">
+              <div className="relative rounded-3xl overflow-hidden shadow-xl">
                 {/* Lime/yellow accent border */}
                 <div className="absolute top-0 right-0 w-full h-full border-4 border-transparent rounded-3xl"
                      style={{ 
@@ -108,16 +109,16 @@ const AboutSection = () => {
                 </div>
                 
                 {/* Placeholder for your actual image */}
-                <div className="aspect-[4/3] bg-gray-300">
+                <div className="aspect-[4/3] bg-gray-200">
                   <img 
-                    src="/img/about/about-1.png" 
-                    alt="Logistics worker with cargo plane" 
+                    src="/img/about/about-1.png" // Replace with actual Viyom image (e.g., warehouse or truck)
+                    alt="Viyom Logistics Operations" 
                     className="w-full h-full object-cover"
                   />
                 </div>
               </div>
 
-              {/* Award Badge */}
+              {/* Stats/Award Badge */}
               <motion.div
                 variants={badgeVariant}
                 initial="hidden"
@@ -130,7 +131,7 @@ const AboutSection = () => {
                            z-10"
               >
                 <div className="flex items-center gap-4">
-                  {/* Award Icon with circular background */}
+                  {/* Icon with circular background */}
                   <motion.div
                     animate={{ rotate: [0, 360] }}
                     transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
@@ -143,10 +144,10 @@ const AboutSection = () => {
                   
                   <div>
                     <div className="text-3xl md:text-4xl font-bold tracking-tight">
-                      20+
+                      15+
                     </div>
-                    <div className="text-sm text-gray-300">
-                      Winning award
+                    <div className="text-sm text-gray-300 font-medium">
+                      Years Team Exp.
                     </div>
                   </div>
                 </div>
@@ -170,7 +171,7 @@ const AboutSection = () => {
               className="mb-4"
             >
               <span className="text-[#1e40af] font-bold text-sm md:text-base tracking-[0.2em] uppercase">
-                ABOUT US
+                ABOUT VIYOM TRANSLOGISTICS
               </span>
             </motion.div>
 
@@ -182,7 +183,7 @@ const AboutSection = () => {
               className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] 
                          font-bold text-gray-900 leading-tight mb-6"
             >
-              Streamlined Solutions For A Seamless Deliveries
+              Streamlined Solutions For Seamless Deliveries
             </motion.h2>
 
             {/* Description */}
@@ -192,8 +193,10 @@ const AboutSection = () => {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="text-gray-600 text-base md:text-lg leading-relaxed mb-8 md:mb-10"
             >
-              Lorem ipsum dolor sit amet consectetur. Amet lectus mi ultricies the dictum 
-              facilisis thr sem. Imperdiet massa turpis sit Lorem ipsum dolor sit amet
+              At Viyom Translogistics, we don't just move goods; we move businesses forward. 
+              From our headquarters in Odisha to destinations across the globe, we replace 
+              complexity with clarity, ensuring your cargo reaches its destination safely 
+              and on time.
             </motion.p>
 
             {/* Feature List with Checkmarks - 2 columns */}
@@ -201,7 +204,7 @@ const AboutSection = () => {
               variants={staggerContainer}
               initial="hidden"
               animate={inView ? "visible" : "hidden"}
-              className="grid grid-cols-1 sm:grid-cols-2 gap-1 md:gap-3 mb-8 md:mb-10"
+              className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8 md:mb-10"
             >
               {features.map((feature, index) => (
                 <motion.div
@@ -235,11 +238,11 @@ const AboutSection = () => {
                 whileHover={{ scale: 1.02, x: 5 }}
                 whileTap={{ scale: 0.98 }}
                 className="inline-flex items-center gap-3 
-                           bg-white text-gray-900 
+                           bg-[#0a2540] text-white
                            px-8 md:px-10 py-4 
-                           rounded-xl border-2 border-gray-900
+                           rounded-xl 
                            font-semibold text-base md:text-lg
-                           shadow-lg hover:shadow-xl
+                           shadow-lg hover:shadow-xl hover:bg-[#1e40af]
                            transition-all duration-300
                            group"
               >

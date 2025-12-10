@@ -95,8 +95,7 @@ const ContactUs = () => {
           <div className="bg-white p-8 rounded-lg shadow-sm h-fit">
             <h2 className="text-xl font-bold text-gray-900 mb-4">Contact Info</h2>
             <p className="text-sm text-gray-600 mb-6">
-              Veetoque sit amet, consectetur adipiscing conduit praesent
-              blandit lorem sign dia.
+              We are dedicated to delivering excellence in every shipment. Whether you have a question about our services, need a customized freight quote, or want to track your cargo, our team is here to assist you 24/7.
             </p>
 
             {/* Phone */}
@@ -109,7 +108,7 @@ const ContactUs = () => {
                 </div>
                 <h3 className="font-semibold text-gray-900">Phone</h3>
               </div>
-              <p className="text-sm text-gray-600 ml-11">012-345-6789(02)</p>
+              <p className="text-sm text-gray-600 ml-11">95552 33768</p>
               <p className="text-sm text-gray-600 ml-11">0123-123-3456</p>
             </div>
 
@@ -124,7 +123,7 @@ const ContactUs = () => {
                 <h3 className="font-semibold text-gray-900">Email</h3>
               </div>
               <p className="text-sm text-gray-600 ml-11">Company@gmail.com</p>
-              <p className="text-sm text-gray-600 ml-11">info.123@gmail.com</p>
+              <p className="text-sm text-gray-600 ml-11">info@viyomtranslogistics.com</p>
             </div>
 
             {/* Location */}
@@ -139,10 +138,9 @@ const ContactUs = () => {
                 <h3 className="font-semibold text-gray-900">Location</h3>
               </div>
               <p className="text-sm text-gray-600 ml-11">
-                4478 Washington Ave, Manchester, Kentucky 39495
-              </p>
-              <p className="text-sm text-gray-600 ml-11">
-                1921 Thornridge Cir. Shiloh, Hawaii 81063
+                Plot No. 1052/1732, Khata No. 109/215,
+                Talabeda, Talcher, Angul,
+                Odisha, India - 759100
               </p>
             </div>
           </div>
@@ -151,7 +149,7 @@ const ContactUs = () => {
         {/* Map Section */}
         <div className="mt-8 rounded-lg overflow-hidden shadow-sm">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.1841371951754!2d-73.98784368459395!3d40.74844097932847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3726.0600700635223!2d85.21424107502918!3d20.950102680679578!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a18b500727551a1%3A0xa6aa8dee76255d14!2sTalcher%2CAngul!5e0!3m2!1sen!2sin!4v1765354174102!5m2!1sen!2sin"
             width="100%"
             height="400"
             style={{ border: 0 }}
