@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const TestimonialsSlider = () => {
   const testimonials = [
@@ -26,6 +26,7 @@ const TestimonialsSlider = () => {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
 
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % testimonials.length);
@@ -34,6 +35,20 @@ const TestimonialsSlider = () => {
   const prevSlide = () => {
     setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
   };
+
+  // Auto-play functionality
+  useEffect(() => {
+    let interval;
+    // Only set the interval if the user is NOT hovering
+    if (!isHovered) {
+      interval = setInterval(() => {
+        nextSlide();
+      }, 5000); // Slides will change every 5000ms (5 seconds)
+    }
+    
+    // Cleanup function to clear interval when component unmounts or hover state changes
+    return () => clearInterval(interval);
+  }, [isHovered]); // Dependency array ensures effect updates when hover state changes
 
   return (
     <section className="bg-gradient-to-br from-lime-500 to-lime-600 py-16 px-4 sm:px-6 lg:px-8">
@@ -49,7 +64,11 @@ const TestimonialsSlider = () => {
         </div>
 
         {/* Testimonial Card */}
-        <div className="bg-white rounded-2xl p-8 md:p-12 shadow-2xl relative">
+        <div 
+          className="bg-white rounded-2xl p-8 md:p-12 shadow-2xl relative min-h-[500px] flex flex-col justify-center"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
           {/* Quote Icon */}
           <div className="absolute -top-6 left-8 w-12 h-12 bg-lime-500 rounded-full flex items-center justify-center">
             <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -57,42 +76,45 @@ const TestimonialsSlider = () => {
             </svg>
           </div>
 
-          {/* Rating Stars */}
-          <div className="flex justify-center mb-6">
-            {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
-              <svg
-                key={i}
-                className="w-6 h-6 text-yellow-400"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-              </svg>
-            ))}
-          </div>
+          {/* Content Container */}
+          <div className="transition-opacity duration-500 ease-in-out">
+            {/* Rating Stars */}
+            <div className="flex justify-center mb-6">
+              {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
+                <svg
+                  key={i}
+                  className="w-6 h-6 text-yellow-400"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+              ))}
+            </div>
 
-          {/* Testimonial Text */}
-          <p className="text-gray-700 text-lg md:text-xl text-center mb-8 leading-relaxed">
-            "{testimonials[currentIndex].text}"
-          </p>
+            {/* Testimonial Text */}
+            <p className="text-gray-700 text-lg md:text-xl text-center mb-8 leading-relaxed">
+              "{testimonials[currentIndex].text}"
+            </p>
 
-          {/* Client Info */}
-          <div className="flex flex-col items-center">
-            <img
-              src={testimonials[currentIndex].image}
-              alt={testimonials[currentIndex].name}
-              className="w-16 h-16 rounded-full object-cover mb-4"
-            />
-            <h4 className="font-bold text-gray-900 text-lg">
-              {testimonials[currentIndex].name}
-            </h4>
-            <p className="text-gray-600">{testimonials[currentIndex].position}</p>
+            {/* Client Info */}
+            <div className="flex flex-col items-center">
+              <img
+                src={testimonials[currentIndex].image}
+                alt={testimonials[currentIndex].name}
+                className="w-16 h-16 rounded-full object-cover mb-4"
+              />
+              <h4 className="font-bold text-gray-900 text-lg">
+                {testimonials[currentIndex].name}
+              </h4>
+              <p className="text-gray-600">{testimonials[currentIndex].position}</p>
+            </div>
           </div>
 
           {/* Navigation Arrows */}
           <button
             onClick={prevSlide}
-            className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-lime-500 hover:bg-lime-600 text-white rounded-full flex items-center justify-center transition-colors duration-200"
+            className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-lime-500 hover:bg-lime-600 text-white rounded-full flex items-center justify-center transition-colors duration-200 z-10"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />
@@ -100,7 +122,7 @@ const TestimonialsSlider = () => {
           </button>
           <button
             onClick={nextSlide}
-            className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-lime-500 hover:bg-lime-600 text-white rounded-full flex items-center justify-center transition-colors duration-200"
+            className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-lime-500 hover:bg-lime-600 text-white rounded-full flex items-center justify-center transition-colors duration-200 z-10"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
@@ -108,7 +130,7 @@ const TestimonialsSlider = () => {
           </button>
 
           {/* Dots Indicator */}
-          <div className="flex justify-center gap-2 mt-8">
+          <div className="absolute bottom-8 left-0 right-0 flex justify-center gap-2">
             {testimonials.map((_, index) => (
               <button
                 key={index}
