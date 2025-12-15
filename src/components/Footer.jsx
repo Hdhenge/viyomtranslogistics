@@ -15,20 +15,6 @@ const Footer = () => {
             <p className="text-gray-400 mb-6 leading-relaxed">
               Your trusted partner for comprehensive supply chain solutions. We bridge the gap between efficiency and reliability, delivering your goods across the globe with precision.
             </p>
-            <div className="flex gap-4">
-              <a href="#" className="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-lime-500 hover:text-white transition-all duration-300 group">
-                <FaFacebookF className="group-hover:scale-110 transition-transform" />
-              </a>
-              <a href="#" className="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-lime-500 hover:text-white transition-all duration-300 group">
-                <FaInstagram className="group-hover:scale-110 transition-transform" />
-              </a>
-              <a href="#" className="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-lime-500 hover:text-white transition-all duration-300 group">
-                <FaTwitter className="group-hover:scale-110 transition-transform" />
-              </a>
-              <a href="#" className="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-lime-500 hover:text-white transition-all duration-300 group">
-                <FaLinkedin className="group-hover:scale-110 transition-transform" />
-              </a>
-            </div>
           </div>
 
           {/* Quick Links */}
@@ -38,7 +24,6 @@ const Footer = () => {
               <li><a href="/" className="text-gray-400 hover:text-lime-500 hover:pl-2 transition-all duration-300 block">Home</a></li>
               <li><a href="/about" className="text-gray-400 hover:text-lime-500 hover:pl-2 transition-all duration-300 block">About Us</a></li>
               <li><a href="/services" className="text-gray-400 hover:text-lime-500 hover:pl-2 transition-all duration-300 block">Our Services</a></li>
-              <li><a href="/track" className="text-gray-400 hover:text-lime-500 hover:pl-2 transition-all duration-300 block">Track Shipment</a></li>
               <li><a href="/contact" className="text-gray-400 hover:text-lime-500 hover:pl-2 transition-all duration-300 block">Contact Us</a></li>
             </ul>
           </div>
@@ -62,8 +47,7 @@ const Footer = () => {
               <li className="flex items-start">
                 <MdLocationOn className="text-lime-500 text-xl mt-1 mr-3 flex-shrink-0" />
                 <span>
-                  123 Business Park, Sector 62,<br />
-                  Noida, UP 201309, India
+                  Plot No. 1052/1732, Khata No. 109/215, Talabeda, Talcher, Angul, Odisha, India - 759100
                 </span>
               </li>
               <li className="flex items-center">

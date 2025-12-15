@@ -54,35 +54,20 @@ const Header = () => {
         isScrolled ? 'opacity-0 -translate-y-full pointer-events-none' : 'opacity-100 translate-y-0'
       }`}>
         <div className="container mx-auto px-4">
-          <div className="flex flex-wrap justify-between items-center gap-4">
+          <div className="flex flex-wrap justify-center items-center gap-4">
             <div className="flex flex-wrap gap-3 md:gap-4 text-xs md:text-sm">
               <a href="mailto:info@example.com" className="flex items-center gap-1 md:gap-2 hover:text-lime-400 transition-colors duration-300">
                 <MdEmail className="text-base md:text-lg flex-shrink-0" />
-                <span className="hidden lg:inline">info@example.com</span>
+                <span className="hidden lg:inline">info@viyomtranlogistics.com</span>
               </a>
               <a href="#" className="flex items-center gap-1 md:gap-2 hover:text-lime-400 transition-colors duration-300">
                 <MdLocationOn className="text-base md:text-lg flex-shrink-0" />
-                <span className="hidden xl:inline">6391 Elgin St. Celina, 10299</span>
+                <span className="hidden xl:inline">Plot No. 1052/1732, Khata No. 109/215, Talabeda, Talcher, Angul, Odisha, India - 7591009</span>
                 <span className="xl:hidden">Location</span>
               </a>
               <a href="tel:(629)555-0129" className="flex items-center gap-1 md:gap-2 hover:text-lime-400 transition-colors duration-300">
                 <MdPhone className="text-base md:text-lg flex-shrink-0" />
                 <span>(629) 555-0129</span>
-              </a>
-            </div>
-
-            <div className="flex gap-3 md:gap-4">
-              <a href="#" className="hover:text-lime-400 transition-colors duration-300" aria-label="Facebook">
-                <FaFacebook size={16} className="md:w-[18px] md:h-[18px]" />
-              </a>
-              <a href="#" className="hover:text-lime-400 transition-colors duration-300" aria-label="Instagram">
-                <FaInstagram size={16} className="md:w-[18px] md:h-[18px]" />
-              </a>
-              <a href="#" className="hover:text-lime-400 transition-colors duration-300" aria-label="Pinterest">
-                <FaPinterest size={16} className="md:w-[18px] md:h-[18px]" />
-              </a>
-              <a href="#" className="hover:text-lime-400 transition-colors duration-300" aria-label="LinkedIn">
-                <FaLinkedin size={16} className="md:w-[18px] md:h-[18px]" />
               </a>
             </div>
           </div>
