@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
+import { sendContactMessage } from '../api/contact';
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
-    name: '',
+    fullName: '',
     email: '',
     phone: '',
-    subject: '',
     message: ''
   });
+
+  const [status, setStatus] = useState("");
 
   const handleChange = (e) => {
     setFormData({
@@ -16,12 +18,18 @@ const ContactUs = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Add your form submission logic here
+    setStatus("Sending...");
+    try {
+      const res = await sendContactMessage(formData);
+      console.log(res);
+      setStatus(res.message);
+      setFormData({ fullName: "", email: "", phone: "", message: "" });
+    } catch (err) {
+      setStatus("Error sending message");
+    }
   };
-
   return (
     <div className="bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
@@ -38,9 +46,9 @@ const ContactUs = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                 <input
                   type="text"
-                  name="name"
+                  name="fullName"
                   placeholder="Your Name"
-                  value={formData.name}
+                  value={formData.fullName}
                   onChange={handleChange}
                   className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-lime-500"
                 />
@@ -63,14 +71,7 @@ const ContactUs = () => {
                   onChange={handleChange}
                   className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-lime-500"
                 />
-                <input
-                  type="text"
-                  name="subject"
-                  placeholder="Subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-lime-500"
-                />
+             
               </div>
 
               <textarea
@@ -88,6 +89,7 @@ const ContactUs = () => {
               >
                 Submit Now
               </button>
+              <p>{status}</p>
             </form>
           </div>
 
