@@ -49,8 +49,7 @@ const ContactSection = () => {
                 </div>
                 <div className="ml-4">
                   <h4 className="text-lg font-semibold text-gray-900 mb-1">Phone</h4>
-                  <p className="text-gray-600">+91 98765 43210</p>
-                  <p className="text-gray-600">+91 120 456 7890</p>
+                  <p className="text-gray-600"><a href="tel:+91 98765 43210">+91 98765 43210</a></p>
                 </div>
               </div>
 
@@ -63,8 +62,7 @@ const ContactSection = () => {
                 </div>
                 <div className="ml-4">
                   <h4 className="text-lg font-semibold text-gray-900 mb-1">Email</h4>
-                  <p className="text-gray-600">info@viyomtranlogistics.com</p>
-                  <p className="text-gray-600">support@viyomtranlogistics.com</p>
+                  <p className="text-gray-600"><a href="mailto:info@viyomtranlogistics.com">info@viyomtranlogistics.com</a></p>
                 </div>
               </div>
 
@@ -78,14 +76,13 @@ const ContactSection = () => {
                 <div className="ml-4">
                   <h4 className="text-lg font-semibold text-gray-900 mb-1">Office</h4>
                   <p className="text-gray-600">
-                    123 Business Park, Sector 62,<br />
-                    Noida, Uttar Pradesh 201309, India
+                     Plot No. 1052/1732, Khata No. 109/215, Talabeda,<br /> Talcher, Angul, Odisha, India - 759100
                   </p>
                 </div>
               </div>
 
               {/* Working Hours */}
-              <div className="flex items-start">
+              {/* <div className="flex items-start">
                 <div className="flex-shrink-0">
                   <div className="w-12 h-12 bg-lime-100 rounded-lg flex items-center justify-center">
                     <MdAccessTime className="w-6 h-6 text-lime-600" />
@@ -96,7 +93,7 @@ const ContactSection = () => {
                   <p className="text-gray-600">Mon - Sat: 9:00 AM - 7:00 PM</p>
                   <p className="text-gray-600">Sunday: Closed</p>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
 

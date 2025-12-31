@@ -52,15 +52,11 @@ const Footer = () => {
               </li>
               <li className="flex items-center">
                 <MdPhone className="text-lime-500 text-xl mr-3 flex-shrink-0" />
-                <span>+91 98765 43210</span>
+                <span><a href="tel:+91 98765 43210" className="text-gray-400 hover:text-lime-500 hover:pl-2 transition-all duration-300 block" >+91 98765 43210</a></span>
               </li>
               <li className="flex items-center">
                 <MdEmail className="text-lime-500 text-xl mr-3 flex-shrink-0" />
-                <span>info@viyomtranlogistics.com</span>
-              </li>
-              <li className="pt-2">
-                <p className="text-sm text-lime-500 font-semibold mb-1">Operating Hours:</p>
-                <p className="text-sm">Mon - Sat: 9:00 AM - 7:00 PM</p>
+                <span><a href="mailto:info@viyomtranlogistics.com" className="text-gray-400 hover:text-lime-500 hover:pl-2 transition-all duration-300 block">info@viyomtranlogistics.com</a></span>
               </li>
             </ul>
           </div>
@@ -69,15 +65,10 @@ const Footer = () => {
 
       {/* Bottom Bar */}
       <div className="border-t border-gray-800 bg-slate-950">
-        <div className="container mx-auto px-4 py-6 flex flex-col md:flex-row justify-between items-center">
+        <div className="container mx-auto px-4 py-6 flex flex-col md:flex-row justify-center items-center">
           <p className="text-gray-500 text-sm mb-4 md:mb-0">
             © {new Date().getFullYear()} <span className="text-white font-semibold">Viyom Tranlogistics</span>. All rights reserved.
           </p>
-          <div className="flex space-x-6 text-sm text-gray-500">
-            <a href="#" className="hover:text-lime-500 transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-lime-500 transition-colors">Terms of Service</a>
-            <a href="#" className="hover:text-lime-500 transition-colors">Cookie Policy</a>
-          </div>
         </div>
       </div>
     </footer>
