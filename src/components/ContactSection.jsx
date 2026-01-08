@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { MdPhone, MdEmail, MdLocationOn, MdAccessTime } from 'react-icons/md';
+import { sendContactMessage } from "../api/contact";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -9,17 +10,27 @@ const ContactSection = () => {
     message: ''
   });
 
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState("");
+
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Add your form submission logic here
+    setLoading(true);
+    setStatus("Sending...");
+
+    try {
+      const res = await sendContactMessage(formData);
+      setStatus(res.message);
+      setFormData({ name: "", email: "", phone: "", message: "" });
+    } catch (error) {
+      setStatus("Failed to send message. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -76,7 +87,7 @@ const ContactSection = () => {
                 <div className="ml-4">
                   <h4 className="text-lg font-semibold text-gray-900 mb-1">Office</h4>
                   <p className="text-gray-600">
-                     Plot No. 1052/1732, Khata No. 109/215, Talabeda,<br /> Talcher, Angul, Odisha, India - 759100
+                    Plot No. 1052/1732, Khata No. 109/215, Talabeda,<br /> Talcher, Angul, Odisha, India - 759100
                   </p>
                 </div>
               </div>
@@ -168,8 +179,12 @@ const ContactSection = () => {
                 type="submit"
                 className="w-full bg-lime-500 hover:bg-lime-600 text-white font-semibold py-3 rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
               >
-                Send Message
+                {loading ? "Sending..." : "Send Message"}
               </button>
+
+              {status && (
+                <p className="mt-3 text-center text-sm">{status}</p>
+              )}
             </form>
           </div>
         </div>
@@ -179,3 +194,6 @@ const ContactSection = () => {
 };
 
 export default ContactSection;
+
+
+

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { sendContactMessage } from '../api/contact';
 
 const ContactUs = () => {
-  const [formData, setFormData] = useState({
+ const [formData, setFormData] = useState({
     fullName: '',
     email: '',
     phone: '',
@@ -10,6 +10,10 @@ const ContactUs = () => {
   });
 
   const [status, setStatus] = useState("");
+
+  // 🔹 ADDED STATES (Popup)
+  const [showPopup, setShowPopup] = useState(false);
+  const [popupType, setPopupType] = useState("info"); // info | success | error
 
   const handleChange = (e) => {
     setFormData({
@@ -21,15 +25,26 @@ const ContactUs = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus("Sending...");
+    setPopupType("info");
+    setShowPopup(true);
+
     try {
       const res = await sendContactMessage(formData);
       console.log(res);
-      setStatus(res.message);
-      setFormData({ fullName: "", email: "", phone: "", message: "" });
+      setStatus(res.message || "Message sent successfully!");
+      setPopupType("success");
+      setFormData({ fullName: "", phone: "", email: "", message: "" });
     } catch (err) {
       setStatus("Error sending message");
+      setPopupType("error");
     }
+
+    // 🔹 Auto close popup
+    setTimeout(() => {
+      setShowPopup(false);
+    }, 3000);
   };
+
   return (
     <div className="bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
@@ -52,17 +67,7 @@ const ContactUs = () => {
                   onChange={handleChange}
                   className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-lime-500"
                 />
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Your E-Mail"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-lime-500"
-                />
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                
                 <input
                   type="tel"
                   name="phone"
@@ -71,7 +76,16 @@ const ContactUs = () => {
                   onChange={handleChange}
                   className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-lime-500"
                 />
-             
+              </div>
+              <div className="grid mb-4">
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Your E-Mail"
+                  value={formData.email}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-lime-500"
+                />
               </div>
 
               <textarea
@@ -110,8 +124,8 @@ const ContactUs = () => {
                 </div>
                 <h3 className="font-semibold text-gray-900">Phone</h3>
               </div>
-              <p className="text-sm text-gray-600 ml-11">95552 33768</p>
-              <p className="text-sm text-gray-600 ml-11">0123-123-3456</p>
+              <p className="text-sm text-gray-600 ml-11"><a href="tel:+91 9876543210">+91 9876543210</a></p>
+             
             </div>
 
             {/* Email */}
@@ -124,7 +138,7 @@ const ContactUs = () => {
                 </div>
                 <h3 className="font-semibold text-gray-900">Email</h3>
               </div>
-              <p className="text-sm text-gray-600 ml-11">info@viyomtranslogistics.com</p>
+              <p className="text-sm text-gray-600 ml-11"><a href="mailto:info@viyomtranlogistics.com">info@viyomtranlogistics.com</a></p>
             </div>
 
             {/* Location */}
@@ -160,6 +174,22 @@ const ContactUs = () => {
           ></iframe>
         </div>
       </div>
+
+      {/* 🔔 POPUP */}
+      {showPopup && (
+        <div className="fixed top-5 right-5 z-50">
+          <div
+            className={`px-6 py-4 rounded-lg shadow-lg text-white
+              ${popupType === "success" && "bg-green-500"}
+              ${popupType === "error" && "bg-red-500"}
+              ${popupType === "info" && "bg-blue-500"}
+            `}
+          >
+            {status}
+          </div>
+        </div>
+      )}
+
     </div>
   );
 };

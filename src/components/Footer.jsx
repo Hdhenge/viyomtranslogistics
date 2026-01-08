@@ -32,11 +32,8 @@ const Footer = () => {
           <div>
             <h4 className="text-xl font-bold mb-6 border-b-2 border-lime-500 inline-block pb-2">Our Services</h4>
             <ul className="space-y-3">
-              <li><a href="#" className="text-gray-400 hover:text-lime-500 hover:pl-2 transition-all duration-300 block">Warehouse Management</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-lime-500 hover:pl-2 transition-all duration-300 block">Air & Sea Freight</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-lime-500 hover:pl-2 transition-all duration-300 block">Ground Transport</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-lime-500 hover:pl-2 transition-all duration-300 block">Supply Chain Consulting</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-lime-500 hover:pl-2 transition-all duration-300 block">Last-Mile Delivery</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-lime-500 hover:pl-2 transition-all duration-300 block">Comprehensive Service in Logistics</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-lime-500 hover:pl-2 transition-all duration-300 block">Logistics & Transportation Services</a></li>
             </ul>
           </div>
 

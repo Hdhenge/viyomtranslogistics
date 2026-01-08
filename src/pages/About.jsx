@@ -210,25 +210,52 @@ const AboutUs = () => {
             </p>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-8">
-            {team.map((member, index) => (
-              <div key={index} className="group w-full sm:w-[calc(50%-1rem)] lg:w-[calc(25%-1.5rem)]">
-                <div className="relative overflow-hidden rounded-xl mb-4">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-300"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          {/* Two column layout */}
+          <div className="flex flex-col lg:flex-row gap-10 items-start">
+            {/* Left: single image */}
+            <div className="w-full lg:w-5/12">
+              <div className="relative overflow-hidden rounded-2xl ring-1 ring-gray-200 bg-white shadow-sm transition-shadow duration-300 hover:shadow-xl">
+                <img
+                  src="/team.png"     // put this file in public/team.png
+                  alt="Team"
+                  className="w-full h-[320px] sm:h-[380px] lg:h-[460px] object-cover transition-transform duration-700 ease-out hover:scale-[1.03]"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                <div className="absolute bottom-4 left-4 right-4">
+                  <p className="text-white font-bold text-xl">Our Leadership Team</p>
+                  <p className="text-white/80 text-sm">Experience. Reliability. Execution.</p>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-1">
-                  {member.name}
-                </h3>
-                <p className="text-lime-600 font-medium">{member.position}</p>
               </div>
-            ))}
-          </div>
+            </div>
 
+            {/* Right: only name + position list */}
+            <div className="w-full lg:w-7/12">
+              <div className="bg-white rounded-2xl   shadow-sm p-6 md:p-8">
+                <h3 className="text-xl font-bold text-gray-900 mb-5">
+                  Leadership
+                </h3>
+
+                <div className="flex flex-col gap-4">
+                  {team.map((member, index) => (
+                    <div
+                      key={index}
+                      className="group flex items-center justify-between gap-4 rounded-xl p-4
+                transition duration-300 hover:bg-gray-50"
+                    >
+                      <div>
+                        <p className="text-lg font-bold text-gray-900 group-hover:text-lime-700 transition-colors duration-300">
+                          {member.name}
+                        </p>
+                        <p className="text-gray-600 font-medium">
+                          {member.position}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
