@@ -103,7 +103,7 @@ const AboutSection = () => {
                 <div className="absolute top-0 right-0 w-full h-full border-4 border-transparent rounded-3xl"
                   style={{
                     borderRightColor: '#d4e157',
-                    borderTopColor: '#d4e157',
+                    borderTopColor: '#09c713',
                     borderTopRightRadius: '1.5rem'
                   }}>
                 </div>
@@ -111,7 +111,7 @@ const AboutSection = () => {
                 {/* Placeholder for your actual image */}
                 <div className="aspect-[4/3] bg-gray-200">
                   <img
-                    src="/img/about/about-1.png" // Replace with actual Viyom image (e.g., warehouse or truck)
+                    src="public\assets\img\delivery-teamwork.png" // Replace with actual Viyom image (e.g., warehouse or truck)
                     alt="Viyom Logistics Operations"
                     className="w-full h-full object-cover"
                   />

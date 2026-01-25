@@ -69,7 +69,7 @@ const AboutUs = () => {
             {/* Left - Image */}
             <div className="relative">
               <img
-                src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800"
+                src="public\assets\img\scene-with-photorealistic-logistics.png"
                 alt="Our company"
                 className="w-full h-[500px] object-cover rounded-2xl shadow-2xl"
               />

@@ -70,8 +70,11 @@ const HeroSection = () => {
               >
                 {[
                   "transportation-best-practices.png",
-                  "sea-logistics.png",
-                  "land-transport.png",
+                  "busy-highway.png",
+                  "cargo-train-platform-.png",
+                  "industrial-container-cargo-freight.png",
+                  "export-import-port-atmosphere.png",
+                  "export-import-port-atmosphere.png",
                 ].map((img, i) => (
                   <SwiperSlide key={i}>
                     <div className="relative">
