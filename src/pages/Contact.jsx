@@ -46,7 +46,7 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="bg-gray-50 min-h-screen px-4 sm:px-6 lg:px-8 pt-20 sm:pt-24 md:pt-28 pb-12">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
@@ -152,10 +152,9 @@ const ContactUs = () => {
                 </div>
                 <h3 className="font-semibold text-gray-900">Location</h3>
               </div>
-              <p className="text-sm text-gray-600 ml-11">
-                Plot No. 1052/1732, Khata No. 109/215,
+              <p className="text-sm text-gray-600 ml-11"><a href="https://www.google.com/maps?q=Plot+No.+1052/1732,+Talabeda,+Talcher,+Angul,+Odisha+759107">Plot No. 1052/1732, Khata No. 109/215,
                 Talabeda, Talcher, Angul,
-                Odisha, India - 759100
+                Odisha, India - 759107</a>
               </p>
             </div>
           </div>
@@ -170,7 +169,7 @@ const ContactUs = () => {
             style={{ border: 0 }}
             allowFullScreen=""
             loading="lazy"
-            className="grayscale"
+            className="saturate-125 contrast-110"
           ></iframe>
         </div>
       </div>

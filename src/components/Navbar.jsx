@@ -60,14 +60,14 @@ const Header = () => {
                 <MdEmail className="text-base md:text-lg flex-shrink-0" />
                 <span className="hidden lg:inline">info@viyomtranlogistics.com</span>
               </a>
-              <a href="#" className="flex items-center gap-1 md:gap-2 hover:text-lime-400 transition-colors duration-300">
+              <a href="https://www.google.com/maps?q=Plot+No.+1052/1732,+Talabeda,+Talcher,+Angul,+Odisha+759107" className="flex items-center gap-1 md:gap-2 hover:text-lime-400 transition-colors duration-300">
                 <MdLocationOn className="text-base md:text-lg flex-shrink-0" />
-                <span className="hidden xl:inline">Plot No. 1052/1732, Khata No. 109/215, Talabeda, Talcher, Angul, Odisha, India - 7591009</span>
+                <span className="hidden xl:inline">Plot No. 1052/1732, Khata No. 109/215, Talabeda, Talcher, Angul, Odisha, India - 759107</span>
                 <span className="xl:hidden">Location</span>
               </a>
               <a href="tel:(629)555-0129" className="flex items-center gap-1 md:gap-2 hover:text-lime-400 transition-colors duration-300">
                 <MdPhone className="text-base md:text-lg flex-shrink-0" />
-                <span>(629) 555-0129</span>
+                <span><a href="tel:+91 9876543210">+91 9876543210</a></span>
               </a>
             </div>
           </div>
@@ -87,7 +87,7 @@ const Header = () => {
             {/* Logo */}
             <Link to="/" className="flex items-center flex-shrink-0">
               <img
-                src="/img/Viyoim-logo.png"
+                src="assets/img/Viyoim-logo.png"
                 alt="Viyom Logo"
                 className={`transition-all duration-300 ${
                   isScrolled ? 'h-10 sm:h-12 md:h-14' : 'h-12 sm:h-16 md:h-20'
@@ -152,22 +152,7 @@ const Header = () => {
           }`}
           style={{ transitionDelay: isMobileMenuOpen ? '100ms' : '0ms' }}
           >
-            <div className="flex justify-center gap-6">
-              <a href="#" className="text-[#0a4a5c] hover:text-[#083d4d] transition-transform duration-300 hover:scale-125" aria-label="Facebook">
-                <FaFacebook size={20} />
-              </a>
-              <a href="#" className="text-[#0a4a5c] hover:text-[#083d4d] transition-transform duration-300 hover:scale-125" aria-label="Instagram">
-                <FaInstagram size={20} />
-              </a>
-              <a href="#" className="text-[#0a4a5c] hover:text-[#083d4d] transition-transform duration-300 hover:scale-125" aria-label="Pinterest">
-                <FaPinterest size={20} />
-              </a>
-              <a href="#" className="text-[#0a4a5c] hover:text-[#083d4d] transition-transform duration-300 hover:scale-125" aria-label="LinkedIn">
-                <FaLinkedin size={20} />
-              </a>
-            </div>
           </div>
-
           {/* Mobile Navigation */}
           <ul className="py-4">
             {navItems.map((item, index) => (
@@ -204,13 +189,13 @@ const Header = () => {
               <MdEmail className="text-xl flex-shrink-0" />
               <span className="text-sm">info@example.com</span>
             </a>
-            <a href="#" className="flex items-center gap-3 text-gray-700 hover:text-[#0a4a5c] transition-all duration-300 hover:translate-x-2">
+            <a href="https://www.google.com/maps?q=Plot+No.+1052/1732,+Talabeda,+Talcher,+Angul,+Odisha+759107" className="flex items-center gap-3 text-gray-700 hover:text-[#0a4a5c] transition-all duration-300 hover:translate-x-2">
               <MdLocationOn className="text-xl flex-shrink-0" />
-              <span className="text-sm">6391 Elgin St. Celina, 10299</span>
+              <span className="text-sm">Plot No. 1052/1732, Khata No. 109/215, Talabeda, Talcher, Angul, Odisha, India - 759107</span>
             </a>
             <a href="tel:(629)555-0129" className="flex items-center gap-3 text-gray-700 hover:text-[#0a4a5c] transition-all duration-300 hover:translate-x-2">
               <MdPhone className="text-xl flex-shrink-0" />
-              <span className="text-sm">(629) 555-0129</span>
+              <span className="text-sm"><a href="tel:+91 9876543210">+91 9876543210</a></span>
             </a>
           </div>
         </div>

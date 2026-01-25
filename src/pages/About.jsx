@@ -47,23 +47,6 @@ const AboutUs = () => {
     }
   ];
 
-  const team = [
-    {
-      name: "Sudhir Nath",
-      position: "Director",
-      image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400"
-    },
-    {
-      name: "Urmila Manoj Shingade",
-      position: "Director",
-      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400"
-    },
-    {
-      name: "Suresh Kumar S",
-      position: "Regional Head (Visakhapatnam)",
-      image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400"
-    }
-  ];
 
   return (
     <div className="bg-white">
@@ -195,69 +178,6 @@ const AboutUs = () => {
         </div>
       </section>
 
-      {/* Team Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <p className="text-sm text-lime-500 uppercase tracking-wide font-semibold mb-2">
-              OUR TEAM
-            </p>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Meet the Leadership
-            </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Our experienced team of logistics professionals is dedicated to delivering excellence in every aspect of our service.
-            </p>
-          </div>
-
-          {/* Two column layout */}
-          <div className="flex flex-col lg:flex-row gap-10 items-start">
-            {/* Left: single image */}
-            <div className="w-full lg:w-5/12">
-              <div className="relative overflow-hidden rounded-2xl ring-1 ring-gray-200 bg-white shadow-sm transition-shadow duration-300 hover:shadow-xl">
-                <img
-                  src="/team.png"     // put this file in public/team.png
-                  alt="Team"
-                  className="w-full h-[320px] sm:h-[380px] lg:h-[460px] object-cover transition-transform duration-700 ease-out hover:scale-[1.03]"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-                <div className="absolute bottom-4 left-4 right-4">
-                  <p className="text-white font-bold text-xl">Our Leadership Team</p>
-                  <p className="text-white/80 text-sm">Experience. Reliability. Execution.</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Right: only name + position list */}
-            <div className="w-full lg:w-7/12">
-              <div className="bg-white rounded-2xl   shadow-sm p-6 md:p-8">
-                <h3 className="text-xl font-bold text-gray-900 mb-5">
-                  Leadership
-                </h3>
-
-                <div className="flex flex-col gap-4">
-                  {team.map((member, index) => (
-                    <div
-                      key={index}
-                      className="group flex items-center justify-between gap-4 rounded-xl p-4
-                transition duration-300 hover:bg-gray-50"
-                    >
-                      <div>
-                        <p className="text-lg font-bold text-gray-900 group-hover:text-lime-700 transition-colors duration-300">
-                          {member.name}
-                        </p>
-                        <p className="text-gray-600 font-medium">
-                          {member.position}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* CTA Section */}
       <section className="bg-gradient-to-r from-lime-500 to-lime-600 py-16 px-4 sm:px-6 lg:px-8">
@@ -269,13 +189,21 @@ const AboutUs = () => {
             Let's discuss how we can help optimize your logistics and grow your business.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <button className="bg-white text-lime-600 font-semibold px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors duration-200">
+            <a
+              href="/contact"
+              className="bg-white text-lime-600 font-semibold px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors duration-200"
+            >
               Contact Us
-            </button>
-            <button className="border-2 border-white text-white font-semibold px-8 py-3 rounded-lg hover:bg-white hover:text-lime-600 transition-colors duration-200">
+            </a>
+
+            <a
+              href="/services"
+              className="border-2 border-white text-white font-semibold px-8 py-3 rounded-lg hover:bg-white hover:text-lime-600 transition-colors duration-200"
+            >
               View Services
-            </button>
+            </a>
           </div>
+
         </div>
       </section>
     </div>

@@ -87,7 +87,9 @@ const ContactSection = () => {
                 <div className="ml-4">
                   <h4 className="text-lg font-semibold text-gray-900 mb-1">Office</h4>
                   <p className="text-gray-600">
-                    Plot No. 1052/1732, Khata No. 109/215, Talabeda,<br /> Talcher, Angul, Odisha, India - 759100
+                    <a href="https://www.google.com/maps?q=Plot+No.+1052/1732,+Talabeda,+Talcher,+Angul,+Odisha+759107">Plot No. 1052/1732, Khata No. 109/215,
+                Talabeda,<br /> Talcher, Angul,
+                Odisha, India - 759107</a>
                   </p>
                 </div>
               </div>

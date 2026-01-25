@@ -44,7 +44,9 @@ const Footer = () => {
               <li className="flex items-start">
                 <MdLocationOn className="text-lime-500 text-xl mt-1 mr-3 flex-shrink-0" />
                 <span>
-                  Plot No. 1052/1732, Khata No. 109/215, Talabeda, Talcher, Angul, Odisha, India - 759100
+                 <a href="https://www.google.com/maps?q=Plot+No.+1052/1732,+Talabeda,+Talcher,+Angul,+Odisha+759107" className="text-gray-400 hover:text-lime-500 hover:pl-2 transition-all duration-300 block">Plot No. 1052/1732, Khata No. 109/215,
+                Talabeda, Talcher, Angul,
+                Odisha, India - 759107</a>
                 </span>
               </li>
               <li className="flex items-center">

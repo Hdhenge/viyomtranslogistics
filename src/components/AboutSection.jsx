@@ -25,8 +25,8 @@ const AboutSection = () => {
   // Animation variants
   const fadeInUp = {
     hidden: { opacity: 0, y: 60 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
       transition: { duration: 0.6, ease: "easeOut" }
     }
@@ -34,8 +34,8 @@ const AboutSection = () => {
 
   const fadeInLeft = {
     hidden: { opacity: 0, x: -80 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       x: 0,
       transition: { duration: 0.8, ease: "easeOut" }
     }
@@ -43,8 +43,8 @@ const AboutSection = () => {
 
   const fadeInRight = {
     hidden: { opacity: 0, x: 80 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       x: 0,
       transition: { duration: 0.8, ease: "easeOut" }
     }
@@ -63,9 +63,9 @@ const AboutSection = () => {
 
   const badgeVariant = {
     hidden: { opacity: 0, scale: 0.8, y: 50 },
-    visible: { 
-      opacity: 1, 
-      scale: 1, 
+    visible: {
+      opacity: 1,
+      scale: 1,
       y: 0,
       transition: {
         type: "spring",
@@ -79,10 +79,10 @@ const AboutSection = () => {
   return (
     <section className="py-12 md:py-20 lg:py-24 bg-gray-50">
       <div className="container mx-auto px-4 lg:px-8">
-        
+
         {/* Main Grid Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-          
+
           {/* Left Side - Image with Badge */}
           <motion.div
             ref={imageRef}
@@ -92,7 +92,7 @@ const AboutSection = () => {
             className="relative order-2 lg:order-1"
           >
             {/* Main Image Container */}
-            <motion.div 
+            <motion.div
               className="relative"
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.3 }}
@@ -101,18 +101,18 @@ const AboutSection = () => {
               <div className="relative rounded-3xl overflow-hidden shadow-xl">
                 {/* Lime/yellow accent border */}
                 <div className="absolute top-0 right-0 w-full h-full border-4 border-transparent rounded-3xl"
-                     style={{ 
-                       borderRightColor: '#d4e157', 
-                       borderTopColor: '#d4e157',
-                       borderTopRightRadius: '1.5rem'
-                     }}>
+                  style={{
+                    borderRightColor: '#d4e157',
+                    borderTopColor: '#d4e157',
+                    borderTopRightRadius: '1.5rem'
+                  }}>
                 </div>
-                
+
                 {/* Placeholder for your actual image */}
                 <div className="aspect-[4/3] bg-gray-200">
-                  <img 
+                  <img
                     src="/img/about/about-1.png" // Replace with actual Viyom image (e.g., warehouse or truck)
-                    alt="Viyom Logistics Operations" 
+                    alt="Viyom Logistics Operations"
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -141,7 +141,7 @@ const AboutSection = () => {
                   >
                     <Award className="w-8 h-8 md:w-10 md:h-10 text-[#c5d63f]" />
                   </motion.div>
-                  
+
                   <div>
                     <div className="text-3xl md:text-4xl font-bold tracking-tight">
                       15+
@@ -193,9 +193,9 @@ const AboutSection = () => {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="text-gray-600 text-base md:text-lg leading-relaxed mb-8 md:mb-10"
             >
-              At Viyom Translogistics, we don't just move goods; we move businesses forward. 
-              From our headquarters in Odisha to destinations across the globe, we replace 
-              complexity with clarity, ensuring your cargo reaches its destination safely 
+              At Viyom Translogistics, we don't just move goods; we move businesses forward.
+              From our headquarters in Odisha to destinations across the globe, we replace
+              complexity with clarity, ensuring your cargo reaches its destination safely
               and on time.
             </motion.p>
 
@@ -219,7 +219,7 @@ const AboutSection = () => {
                                   group-hover:scale-110 transition-transform duration-300">
                     <Check className="w-4 h-4 md:w-5 md:h-5 text-white stroke-[3]" />
                   </div>
-                  
+
                   {/* Feature Text */}
                   <span className="text-gray-800 text-sm md:text-base font-medium leading-relaxed pt-0.5">
                     {feature}
@@ -234,28 +234,30 @@ const AboutSection = () => {
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.8 }}
             >
-              <motion.button
+              <motion.a
+                href="/about"
                 whileHover={{ scale: 1.02, x: 5 }}
                 whileTap={{ scale: 0.98 }}
                 className="inline-flex items-center gap-3 
-                           bg-[#0a2540] text-white
-                           px-8 md:px-10 py-4 
-                           rounded-xl 
-                           font-semibold text-base md:text-lg
-                           shadow-lg hover:shadow-xl hover:bg-[#1e40af]
-                           transition-all duration-300
-                           group"
+               bg-[#0a2540] text-white
+               px-8 md:px-10 py-4 
+               rounded-xl 
+               font-semibold text-base md:text-lg
+               shadow-lg hover:shadow-xl hover:bg-[#1e40af]
+               transition-all duration-300
+               group"
               >
                 Learn More
                 <motion.span
                   animate={{ x: [0, 5, 0] }}
-                  transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                  transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
                   className="text-xl font-bold"
                 >
                   →
                 </motion.span>
-              </motion.button>
+              </motion.a>
             </motion.div>
+
           </motion.div>
         </div>
       </div>

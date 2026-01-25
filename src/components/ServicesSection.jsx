@@ -29,7 +29,7 @@ const ServicesSectionSimple = () => {
     <section className="bg-gray-50 py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          
+
           {/* Left Side - Text Content */}
           <div className="order-2 lg:order-1">
             <div className="flex items-center gap-2 mb-3">
@@ -38,22 +38,22 @@ const ServicesSectionSimple = () => {
                 WHAT WE DO
               </p>
             </div>
-            
+
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-              Professional Logistics <br className="hidden md:block"/> Services
+              Professional Logistics <br className="hidden md:block" /> Services
             </h2>
-            
+
             <p className="text-gray-600 text-lg mb-8 leading-relaxed">
-              From warehousing to worldwide shipping, Viyom Translogistics provides 
-              comprehensive solutions that keep your business moving forward with efficiency 
+              From warehousing to worldwide shipping, Viyom Translogistics provides
+              comprehensive solutions that keep your business moving forward with efficiency
               and reliability.
             </p>
 
             {/* Services List */}
             <div className="space-y-6 mb-10">
               {services.map((service, index) => (
-                <div 
-                  key={index} 
+                <div
+                  key={index}
                   className="flex items-start bg-white p-5 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300"
                 >
                   <div className="flex-shrink-0">
@@ -70,24 +70,32 @@ const ServicesSectionSimple = () => {
             </div>
 
             {/* CTA Button */}
-            <button className="group inline-flex items-center gap-2 bg-[#0a2540] hover:bg-[#1e40af] text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
+            <a
+              href="/services"
+              className="group inline-flex items-center gap-2 
+             bg-[#0a2540] hover:bg-[#1e40af] 
+             text-white font-semibold px-8 py-4 
+             rounded-xl transition-all duration-300 
+             shadow-lg hover:shadow-xl hover:-translate-y-1"
+            >
               Explore Our Services
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </button>
+            </a>
+
           </div>
 
           {/* Right Side - Image */}
           <div className="relative order-1 lg:order-2">
             {/* Decorative Border Element */}
             <div className="absolute -inset-4 border-2 border-[#d4e157] rounded-3xl z-0 hidden lg:block translate-x-4 translate-y-4"></div>
-            
+
             <div className="relative rounded-2xl overflow-hidden shadow-2xl z-10">
               <img
                 src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
                 alt="Viyom Logistics Warehouse Operations"
                 className="w-full h-[600px] object-cover hover:scale-105 transition-transform duration-700"
               />
-              
+
               {/* Overlay Content */}
               <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 via-black/40 to-transparent p-8">
                 <p className="text-white font-medium text-lg">
