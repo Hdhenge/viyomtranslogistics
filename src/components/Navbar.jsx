@@ -56,7 +56,7 @@ const Header = () => {
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap justify-center items-center gap-4">
             <div className="flex flex-wrap gap-3 md:gap-4 text-xs md:text-sm">
-              <a href="mailto:info@example.com" className="flex items-center gap-1 md:gap-2 hover:text-lime-400 transition-colors duration-300">
+              <a href="mailto:info@viyomtranlogistics.com" className="flex items-center gap-1 md:gap-2 hover:text-lime-400 transition-colors duration-300">
                 <MdEmail className="text-base md:text-lg flex-shrink-0" />
                 <span className="hidden lg:inline">info@viyomtranlogistics.com</span>
               </a>
@@ -185,9 +185,9 @@ const Header = () => {
             }`}
             style={{ transitionDelay: isMobileMenuOpen ? '450ms' : '0ms' }}
           >
-            <a href="mailto:info@example.com" className="flex items-center gap-3 text-gray-700 hover:text-[#0a4a5c] transition-all duration-300 hover:translate-x-2">
+            <a href="mailto:info@viyomtranlogistics.com" className="flex items-center gap-3 text-gray-700 hover:text-[#0a4a5c] transition-all duration-300 hover:translate-x-2">
               <MdEmail className="text-xl flex-shrink-0" />
-              <span className="text-sm">info@example.com</span>
+              <span className="text-sm">info@viyomtranlogistics.com</span>
             </a>
             <a href="https://www.google.com/maps?q=Plot+No.+1052/1732,+Talabeda,+Talcher,+Angul,+Odisha+759107" className="flex items-center gap-3 text-gray-700 hover:text-[#0a4a5c] transition-all duration-300 hover:translate-x-2">
               <MdLocationOn className="text-xl flex-shrink-0" />

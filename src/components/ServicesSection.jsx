@@ -91,7 +91,7 @@ const ServicesSectionSimple = () => {
 
             <div className="relative rounded-2xl overflow-hidden shadow-2xl z-10">
               <img
-                src="public\assets\img\export-import-port-atmosphere.png"
+                src="public/assets/img/export-import-port-atmosphere.png"
                 alt="Viyom Logistics Warehouse Operations"
                 className="w-full h-[600px] object-cover hover:scale-105 transition-transform duration-700"
               />

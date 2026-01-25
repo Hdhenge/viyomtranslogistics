@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 const Services = () => {
   // EXISTING: comprehensive services
   const comprehensiveServices = [
@@ -190,8 +190,8 @@ const Services = () => {
   ];
 
   return (
-   <>
-        {/* Header */}
+    <>
+      {/* Header */}
       <section className="bg-gradient-to-r from-lime-500 to-lime-600 py-20 px-4 text-center">
         <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
           Professional Logistics Solutions
@@ -201,70 +201,71 @@ const Services = () => {
         </p>
       </section>
 
-        {/* Comprehensive Service in Logistics */}
-        <section className="py-16 px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Comprehensive Service in Logistics
-            </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Complete end-to-end logistics solutions to streamline your supply chain operations and maximize efficiency.
-            </p>
-          </div>
+      {/* Comprehensive Service in Logistics */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Comprehensive Service in Logistics
+          </h2>
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            Complete end-to-end logistics solutions to streamline your supply chain operations and maximize efficiency.
+          </p>
+        </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {comprehensiveServices.map((service, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-lg p-8 shadow-sm hover:shadow-lg transition-shadow duration-300 group"
-              >
-                <div className="w-16 h-16 bg-lime-100 rounded-lg flex items-center justify-center mb-6 text-lime-600 group-hover:bg-lime-500 group-hover:text-white transition-colors duration-300">
-                  {service.icon}
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  {service.title}
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  {service.description}
-                </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {comprehensiveServices.map((service, index) => (
+            <div
+              key={index}
+              className="bg-white rounded-lg p-8 shadow-sm hover:shadow-lg transition-shadow duration-300 group"
+            >
+              <div className="w-16 h-16 bg-lime-100 rounded-lg flex items-center justify-center mb-6 text-lime-600 group-hover:bg-lime-500 group-hover:text-white transition-colors duration-300">
+                {service.icon}
               </div>
-            ))}
-          </div>
-        </section>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">
+                {service.title}
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                {service.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
 
-        {/* Logistics & Transportation Services */}
-        <section>
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Logistics & Transportation Services
-            </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Reliable transportation solutions covering ground, air, and sea freight to ensure your cargo reaches its destination safely and on time.
-            </p>
-          </div>
+      {/* Logistics & Transportation Services */}
+      <section>
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Logistics & Transportation Services
+          </h2>
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            Reliable transportation solutions covering ground, air, and sea freight to ensure your cargo reaches its destination safely and on time.
+          </p>
+        </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {transportationServices.map((service, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-lg p-8 shadow-sm hover:shadow-lg transition-shadow duration-300 group"
-              >
-                <div className="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-6 text-blue-600 group-hover:bg-blue-500 group-hover:text-white transition-colors duration-300">
-                  {service.icon}
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  {service.title}
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  {service.description}
-                </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {transportationServices.map((service, index) => (
+            <div
+              key={index}
+              className="bg-white rounded-lg p-8 shadow-sm hover:shadow-lg transition-shadow duration-300 group"
+            >
+              <div className="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-6 text-blue-600 group-hover:bg-blue-500 group-hover:text-white transition-colors duration-300">
+                {service.icon}
               </div>
-            ))}
-          </div>
-        </section>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">
+                {service.title}
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                {service.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
 
-        {/* Call to Action */}
-        <section>
+      {/* Call to Action */}
+
+      <section>
         <div className="mt-20 bg-gradient-to-r from-lime-500 to-lime-600  p-12 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">
             Ready to Optimize Your Logistics?
@@ -272,14 +273,15 @@ const Services = () => {
           <p className="text-lime-50 mb-8 max-w-2xl mx-auto">
             Get in touch with our team to discuss how we can help streamline your supply chain and transportation needs.
           </p>
-          <a
-            href="/contact"
+          <Link
+            to="/contact"
             className="inline-flex bg-white text-lime-600 font-semibold px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors duration-200"
           >
             Contact Us Today
-          </a>
+          </Link>
         </div>
-        </section>
+      </section>
+
     </>
   );
 };

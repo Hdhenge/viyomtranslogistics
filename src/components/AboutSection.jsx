@@ -111,7 +111,7 @@ const AboutSection = () => {
                 {/* Placeholder for your actual image */}
                 <div className="aspect-[4/3] bg-gray-200">
                   <img
-                    src="public\assets\img\delivery-teamwork.png" // Replace with actual Viyom image (e.g., warehouse or truck)
+                    src="public/assets/img/delivery-teamwork.png" // Replace with actual Viyom image (e.g., warehouse or truck)
                     alt="Viyom Logistics Operations"
                     className="w-full h-full object-cover"
                   />
