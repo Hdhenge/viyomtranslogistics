@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { sendContactMessage } from '../api/contact';
 
 const ContactUs = () => {
- const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState({
     fullName: '',
     email: '',
     phone: '',
@@ -46,14 +46,17 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="bg-gray-50 min-h-screen px-4 sm:px-6 lg:px-8 pt-20 sm:pt-24 md:pt-28 pb-12">
-      <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <p className="text-sm text-gray-500 uppercase tracking-wide mb-2">CONTACT US</p>
-          <h1 className="text-4xl font-bold text-gray-900">Get in Touch</h1>
-        </div>
-
+    <>
+      {/* Header */}
+      <section className="bg-gradient-to-r from-lime-500 to-lime-600 py-20 px-4 text-center">
+        <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          CONTACT US
+        </h1>
+        <p className="text-xl text-lime-50 max-w-3xl mx-auto">
+          Get in Touch
+        </p>
+      </section>
+      <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Contact Form */}
           <div className="lg:col-span-2">
@@ -67,7 +70,7 @@ const ContactUs = () => {
                   onChange={handleChange}
                   className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-lime-500"
                 />
-                
+
                 <input
                   type="tel"
                   name="phone"
@@ -125,7 +128,7 @@ const ContactUs = () => {
                 <h3 className="font-semibold text-gray-900">Phone</h3>
               </div>
               <p className="text-sm text-gray-600 ml-11"><a href="tel:+91 9876543210">+91 9876543210</a></p>
-             
+
             </div>
 
             {/* Email */}
@@ -189,7 +192,7 @@ const ContactUs = () => {
         </div>
       )}
 
-    </div>
+    </>
   );
 };
 

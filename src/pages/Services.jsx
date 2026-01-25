@@ -190,23 +190,19 @@ const Services = () => {
   ];
 
   return (
-    <div className="bg-gray-50 min-h-screen px-4 sm:px-6 lg:px-8 pt-20 sm:pt-24 md:pt-28 pb-12">
-      <div className="max-w-7xl mx-auto">
-        {/* Existing Header */}
-        <div className="text-center mb-16">
-          <p className="text-sm text-lime-500 uppercase tracking-wide font-semibold mb-2">
-            OUR SERVICES
-          </p>
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Professional Logistics Solutions
-          </h1>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            We provide comprehensive logistics and transportation services tailored to meet your business needs with efficiency and reliability.
-          </p>
-        </div>
+   <>
+        {/* Header */}
+      <section className="bg-gradient-to-r from-lime-500 to-lime-600 py-20 px-4 text-center">
+        <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          Professional Logistics Solutions
+        </h1>
+        <p className="text-xl text-lime-50 max-w-3xl mx-auto">
+          Comprehensive logistics and transportation services tailored to your business needs.
+        </p>
+      </section>
 
         {/* Comprehensive Service in Logistics */}
-        <section className="mb-20">
+        <section className="py-16 px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Comprehensive Service in Logistics
@@ -268,7 +264,8 @@ const Services = () => {
         </section>
 
         {/* Call to Action */}
-        <div className="mt-20 bg-gradient-to-r from-lime-500 to-lime-600 rounded-2xl p-12 text-center">
+        <section>
+        <div className="mt-20 bg-gradient-to-r from-lime-500 to-lime-600  p-12 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">
             Ready to Optimize Your Logistics?
           </h2>
@@ -282,8 +279,8 @@ const Services = () => {
             Contact Us Today
           </a>
         </div>
-      </div>
-    </div>
+        </section>
+    </>
   );
 };
 
