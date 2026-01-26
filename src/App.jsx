@@ -14,11 +14,11 @@ import NotFound from "./pages/NotFound";
 function App() {
   return (
     <Router>
-      <ScrollToTop /> {/* ✅ Scroll reset on route change */}
+      <ScrollToTop />
 
       <Navbar />
 
-      <main className="min-h-screen">
+      <main className="min-h-screen pt-[80px] md:pt-0">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -32,5 +32,6 @@ function App() {
     </Router>
   );
 }
+
 
 export default App;

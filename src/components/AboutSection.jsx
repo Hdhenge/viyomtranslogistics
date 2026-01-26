@@ -1,9 +1,13 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Check, Award } from 'lucide-react';
 
 const AboutSection = () => {
+
+  const MotionLink = motion(Link);
+
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1
@@ -111,7 +115,7 @@ const AboutSection = () => {
                 {/* Placeholder for your actual image */}
                 <div className="aspect-[4/3] bg-gray-200">
                   <img
-                    src="public/assets/img/delivery-teamwork.png" // Replace with actual Viyom image (e.g., warehouse or truck)
+                    src="/assets/img/delivery-teamwork.png" // Replace with actual Viyom image (e.g., warehouse or truck)
                     alt="Viyom Logistics Operations"
                     className="w-full h-full object-cover"
                   />
@@ -234,19 +238,20 @@ const AboutSection = () => {
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.8 }}
             >
-              <motion.a
-                href="/about"
+              <MotionLink
+                to="/about"
                 whileHover={{ scale: 1.02, x: 5 }}
                 whileTap={{ scale: 0.98 }}
                 className="inline-flex items-center gap-3 
-               bg-[#0a2540] text-white
-               px-8 md:px-10 py-4 
-               rounded-xl 
-               font-semibold text-base md:text-lg
-               shadow-lg hover:shadow-xl hover:bg-[#1e40af]
-               transition-all duration-300
-               group"
+    bg-[#0a2540] text-white
+    px-8 md:px-10 py-4 
+    rounded-xl 
+    font-semibold text-base md:text-lg
+    shadow-lg hover:shadow-xl hover:bg-[#1e40af]
+    transition-all duration-300
+    group"
               >
+
                 Learn More
                 <motion.span
                   animate={{ x: [0, 5, 0] }}
@@ -255,7 +260,7 @@ const AboutSection = () => {
                 >
                   →
                 </motion.span>
-              </motion.a>
+              </MotionLink>
             </motion.div>
 
           </motion.div>
