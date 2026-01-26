@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   const [currentBgSlide, setCurrentBgSlide] = useState(0);
@@ -249,14 +250,20 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7 }}
-              className="pt-4"
+              className="pt-4 flex flex-wrap items-center justify-center gap-4"
             >
-              <a
-                href="#services"
+              <Link
+                to="/services"
                 className="inline-flex items-center gap-3 bg-[#c8d82e] text-[#0a4a5c] px-10 py-5 rounded-xl text-lg font-semibold shadow-lg hover:shadow-2xl hover:-translate-y-1 hover:bg-[#d4e347] transition-all duration-300"
               >
                 Explore Services →
-              </a>
+              </Link>
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-3 bg-transparent border-2 border-[#c8d82e] text-[#c8d82e] px-10 py-5 rounded-xl text-lg font-semibold hover:bg-[#c8d82e] hover:text-[#0a4a5c] hover:-translate-y-1 transition-all duration-300"
+              >
+                Contact Us
+              </Link>
             </motion.div>
           </motion.div>
 
