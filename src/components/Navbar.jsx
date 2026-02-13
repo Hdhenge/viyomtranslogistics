@@ -5,6 +5,7 @@ import { MdEmail, MdLocationOn, MdPhone, MdClose, MdMenu } from "react-icons/md"
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
@@ -19,9 +20,26 @@ const Header = () => {
   }, [isMobileMenuOpen]);
 
   useEffect(() => {
-    document.body.style.overflow = isMobileMenuOpen ? "hidden" : "unset";
-    return () => (document.body.style.overflow = "unset");
-  }, [isMobileMenuOpen]);
+    if (window.innerWidth >= 1024) {
+      setIsMobileMenuOpen(true);
+    }
+  });
+
+  useEffect(() => {
+    
+      if (window.innerWidth >= 1024) {
+        // Desktop → always allow scroll
+        document.body.style.overflow = "unset";
+      } else {
+        // Mobile → control by menu state
+        document.body.style.overflow =  "hidden";
+      }
+  
+  });
+  
+  
+
+  
 
   const navItems = [
     { name: "Home", path: "/" },
@@ -34,7 +52,7 @@ const Header = () => {
     <>
       {/* ================= TOPBAR ================= */}
       <div
-        className={`hidden md:block w-full bg-[#13253d] text-white py-3 transition-all duration-300 ${
+        className={`hidden md:block w-full bg-[#13253d] text-white py-3 transition-all sticky duration-300 ${
           isScrolled ? "opacity-0 -translate-y-full pointer-events-none" : ""
         }`}
       >
@@ -73,7 +91,7 @@ const Header = () => {
 
       {/* ================= NAVBAR ================= */}
       <nav
-        className={`fixed md:sticky top-0 w-full bg-white z-[1000] transition-all ${
+        className={`fixed lg:sticky top-0 w-full bg-white z-[1000] transition-all lg:w-auto${
           isScrolled ? "shadow-xl shadow-lime-400/30" : "shadow-md"
         }`}
       >
